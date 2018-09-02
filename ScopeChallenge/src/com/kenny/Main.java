@@ -1,0 +1,8 @@
+package com.kenny;
+
+public class Main {
+
+    public static void main(String[] args) {
+       X x = new X();
+    }
+}
