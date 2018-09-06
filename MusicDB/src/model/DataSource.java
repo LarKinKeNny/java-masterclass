@@ -59,6 +59,14 @@ public class DataSource {
             "." + COLUMN_ARTISTS_ID + " = " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ARTIST + " WHERE " + TABLE_SONGS +
             ". " + COLUMN_SONGS_TITLE + "='";
 
+    public static final String INSERT_ARTIST = "INSERT INTO " + TABLE_ARTISTS + "(" + COLUMN_ARTISTS_NAME +
+            ") VALUES(?)";
+
+    public static final String INSERT_ALBUM = "INSERT INTO " + TABLE_ALBUMS + "(" + COLUMN_ALBUM_NAME + " , "  +
+            COLUMN_ALBUM_ARTIST + ") VALUES(? , ?)";
+
+    public static final String INSERT_SONGS = "INSERT INTO " + TABLE_SONGS + "(" +COLUMN_SONGS_TRACK + "," +
+            COLUMN_SONGS_TITLE + "," + COLUMN_SONGS_ALBUM + ") VALUES(? , ? , ?)";
 
     public boolean openConnection(){
         try{
