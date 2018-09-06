@@ -15,7 +15,7 @@ public class Main {
         if(dataSource.openConnection()){
             System.out.println("Results from Artist table");
             List<Artists> artistsList = dataSource.queryArtist(DataSource.ORDER_BY_DESC);
-            if(artistsList == null){
+            if(artistsList.isEmpty()){
                 System.out.println("No Artists");
                 return;
             }
@@ -26,7 +26,7 @@ public class Main {
 //            String artistName = scanner.nextLine();
 //            System.out.println("Order by ? 0 = default, 1 = Ascending, 2 = Descending");
 //            List<String> albumList = dataSource.queryArtistForAlbums(artistName,scanner.nextInt());
-//            if(albumList == null){
+//            if(albumList.isEmpty()){
 //                System.out.println("No Albums");
 //                return;
 //            }
@@ -34,15 +34,16 @@ public class Main {
 //            for(String album : albumList){
 //                System.out.println(album);
 //            }
-            System.out.println("Please enter the name of the song you want to query");
-            String songName = scanner.nextLine();
-            System.out.println("Order by ? 0 = default, 1 = Ascending, 2 = Descending");
-            int orderBy = scanner.nextInt();
-            List<SongArtist> songArtistList = dataSource.queryArtistForSong(songName,orderBy);
-
-            for(SongArtist songArtist : songArtistList){
-                System.out.println(songArtist.getTrack() + "\t" + songArtist.getAlbumName()  + "\t" + songArtist.getArtistName());
-            }
+//            System.out.println("Please enter the name of the song you want to query");
+//            String songName = scanner.nextLine();
+//            System.out.println("Order by ? 0 = default, 1 = Ascending, 2 = Descending");
+//            int orderBy = scanner.nextInt();
+//            List<SongArtist> songArtistList = dataSource.queryArtistForSong(songName,orderBy);
+//
+//            for(SongArtist songArtist : songArtistList){
+//                System.out.println(songArtist.getTrack() + "\t" + songArtist.getAlbumName()  + "\t" + songArtist.getArtistName());
+//            }
+            dataSource.querySongMetaData();
         }
         dataSource.close();
     }

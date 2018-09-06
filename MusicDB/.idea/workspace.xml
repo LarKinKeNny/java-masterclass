@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4591bd26-71e6-4c29-89d1-2b5510f6714e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_23_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Albums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Artists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/SongArtist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Songs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestDB/.idea/dictionaries/Leo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestDB/.idea/libraries/sqlite_jdbc_3_23_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestDB/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicDB/com/kenny/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicDB/com/kenny/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicDB/model/DataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicDB/model/DataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kenny/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DataSource.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,19 +19,20 @@
     <session id="329738831">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.4" value="4" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3964" />
+          <entry key="java" value="4220" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3964" />
+          <entry key="JAVA" value="4220" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -54,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kenny/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="129" selection-start-line="43" selection-start-column="129" selection-end-line="43" selection-end-column="129" />
+            <state relative-caret-position="221">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,18 +61,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/DataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="144" column="72" selection-start-line="144" selection-start-column="72" selection-end-line="144" selection-end-column="72" />
+            <state relative-caret-position="595">
+              <caret line="192" selection-start-line="192" selection-end-line="192" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#openConnection#0;class#DataSource#0" />
-                <element signature="method#close#0;class#DataSource#0" />
-                <element signature="method#queryArtist#0;class#DataSource#0" />
                 <element signature="method#queryArtistForAlbums#0;class#DataSource#0" />
                 <element signature="method#queryArtistForSong#0;class#DataSource#0" />
+                <element signature="method#querySongMetaData#0;class#DataSource#0" />
               </folding>
             </state>
           </provider>
@@ -161,13 +154,13 @@
         <option value="$PROJECT_DIR$/src/model/Songs.java" />
         <option value="$PROJECT_DIR$/src/model/Albums.java" />
         <option value="$PROJECT_DIR$/src/model/SongArtist.java" />
-        <option value="$PROJECT_DIR$/src/com/kenny/Main.java" />
         <option value="$PROJECT_DIR$/src/model/DataSource.java" />
+        <option value="$PROJECT_DIR$/src/com/kenny/Main.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="952" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1088" />
   </component>
@@ -193,6 +186,12 @@
               <item name="MusicDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="MusicDB" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="kenny" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -205,7 +204,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536146554523" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536150530469" />
     <property name="last_opened_file_path" value="$USER_HOME$/sqlite-jdbc-3.23.1.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -254,10 +253,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
+    <frame x="-6" y="0" width="781" height="870" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24899329" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.5145631" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -266,14 +265,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20402685" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29395974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26174498" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32885906" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.24295302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -303,6 +302,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Albums.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Artists.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -323,23 +329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Albums.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kenny/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="129" selection-start-line="43" selection-start-column="129" selection-end-line="43" selection-end-column="129" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -365,15 +354,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/DataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="144" column="72" selection-start-line="144" selection-start-column="72" selection-end-line="144" selection-end-column="72" />
+        <state relative-caret-position="595">
+          <caret line="192" selection-start-line="192" selection-end-line="192" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#openConnection#0;class#DataSource#0" />
-            <element signature="method#close#0;class#DataSource#0" />
-            <element signature="method#queryArtist#0;class#DataSource#0" />
             <element signature="method#queryArtistForAlbums#0;class#DataSource#0" />
             <element signature="method#queryArtistForSong#0;class#DataSource#0" />
+            <element signature="method#querySongMetaData#0;class#DataSource#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kenny/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

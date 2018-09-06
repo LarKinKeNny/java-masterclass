@@ -176,4 +176,17 @@ public class DataSource {
         }
         return null;
     }
+
+    public void querySongMetaData(){
+        try(Statement statement = conn.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_SONGS)){
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            int columnCount = metaData.getColumnCount();
+            for(int i =0; i < columnCount; i++){
+                System.out.println((i + 1) + "# Column Name: " + metaData.getColumnName(i + 1));
+            }
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
