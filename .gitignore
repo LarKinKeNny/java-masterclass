@@ -1,5 +1,8 @@
 #class_files
 *.class
 
+
 #IntelliJ
 *.xml
+*.iml
+*.html
