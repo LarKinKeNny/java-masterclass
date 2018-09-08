@@ -270,7 +270,7 @@ public class DataSource {
             throw new  SQLException("Couldn't insert album.");
         }
 
-        ResultSet generatedKey =insertAlbum.getGeneratedKeys();
+        ResultSet generatedKey = insertAlbum.getGeneratedKeys();
 
         if(generatedKey.next()){
             return generatedKey.getInt(1);
@@ -279,18 +279,35 @@ public class DataSource {
         }
     }
 
-   /* public void insertSong (String songName, int artistId)throws SQLException{
-        queryAlbum.setString(1, songName);
-        ResultSet resultAlbum = queryArtist.executeQuery();
-        if(resultAlbum.next()){
-            return resultAlbum.getInt(1);
+    public void insertSong (String artistName, String albumName, String songTitle, int trackNo){
+        try{
+            conn.setAutoCommit(false);
+            int artistId = insertArtist(artistName);
+            int albumId = insertAlbum(albumName, artistId);
+            insertSongs.setInt(1 ,trackNo);
+            insertSongs.setString(2, songTitle);
+            insertSongs.setInt(3, albumId);
+            int rowsChanged = insertSongs.executeUpdate();
+            if(rowsChanged == 1){
+                conn.commit();
+            }else {
+                throw new SQLException("More than 1 row was changed, rolled back changes");
+            }
+        }catch(SQLException e){
+            System.out.println("Failed to insert the song " + e.getMessage());
+            try {
+                System.out.println("Rolling back changes");
+                conn.rollback();
+            }catch(SQLException e3){
+                System.out.println("Failed to rollback changes " + e3.getMessage());
+            }
+        }finally {
+            try {
+                System.out.println("Setting to default commit behaviour");
+                conn.setAutoCommit(true);
+            }catch (SQLException e2){
+                System.out.println("failed to set AutoCommit" + e2.getMessage());
+            }
         }
-        insertAlbum.setString(1, songName);
-        insertAlbum.setInt(2, artistId);
-        int rowID =insertAlbum.executeUpdate();
-        if(rowID != 1){
-            throw new  SQLException("Couldn't insert song.");
-        }
-
-    }*/
+    }
 }
