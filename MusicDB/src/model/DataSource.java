@@ -74,7 +74,7 @@ public class DataSource {
             " WHERE " + COLUMN_ALBUM_NAME + " = ?";
 
     private static PreparedStatement insertArtist;
-    private static PreparedStatement insertAlbum;
+    private static PreparedStatement insertAlbums;
     private static PreparedStatement insertSongs;
     private static PreparedStatement queryArtist;
     private static PreparedStatement queryAlbum;
@@ -84,7 +84,7 @@ public class DataSource {
         try {
             conn = DriverManager.getConnection(DB_CONNECTIONS_STRING);
             insertArtist = conn.prepareStatement(INSERT_ARTIST, Statement.RETURN_GENERATED_KEYS);
-            insertAlbum = conn.prepareStatement(INSERT_ALBUM, Statement.RETURN_GENERATED_KEYS);
+            insertAlbums = conn.prepareStatement(INSERT_ALBUM, Statement.RETURN_GENERATED_KEYS);
             insertSongs = conn.prepareStatement(INSERT_SONGS);
             queryArtist = conn.prepareStatement(QUERY_ARTIST);
             queryAlbum = conn.prepareStatement(QUERY_ALBUM);
@@ -103,8 +103,8 @@ public class DataSource {
                 insertArtist.close();
             }
 
-            if (insertAlbum != null) {
-                insertAlbum.close();
+            if (insertAlbums != null) {
+                insertAlbums.close();
             }
 
             if (insertSongs != null) {
@@ -236,7 +236,7 @@ public class DataSource {
         }
     }
 
-    public int insertArtist(String artist) throws SQLException {
+    private int insertArtist(String artist) throws SQLException {
         queryArtist.setString(1,artist);
         ResultSet resultArtist = queryArtist.executeQuery();
         if(resultArtist.next()){
@@ -257,20 +257,20 @@ public class DataSource {
         }
     }
 
-    public int insertAlbum (String albumName, int artistId)throws SQLException{
+    private int insertAlbum (String albumName, int artistId)throws SQLException{
         queryAlbum.setString(1, albumName);
-        ResultSet resultAlbum = queryArtist.executeQuery();
+        ResultSet resultAlbum = queryAlbum.executeQuery();
         if(resultAlbum.next()){
             return resultAlbum.getInt(1);
         }
-        insertAlbum.setString(1, albumName);
-        insertAlbum.setInt(2, artistId);
-        int rowID =insertAlbum.executeUpdate();
+        insertAlbums.setString(1, albumName);
+        insertAlbums.setInt(2, artistId);
+        int rowID = insertAlbums.executeUpdate();
         if(rowID != 1){
             throw new  SQLException("Couldn't insert album.");
         }
 
-        ResultSet generatedKey = insertAlbum.getGeneratedKeys();
+        ResultSet generatedKey = insertAlbums.getGeneratedKeys();
 
         if(generatedKey.next()){
             return generatedKey.getInt(1);
@@ -293,7 +293,7 @@ public class DataSource {
             }else {
                 throw new SQLException("More than 1 row was changed, rolled back changes");
             }
-        }catch(SQLException e){
+        }catch(Exception e){
             System.out.println("Failed to insert the song " + e.getMessage());
             try {
                 System.out.println("Rolling back changes");

@@ -12,14 +12,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DataSource dataSource = new DataSource();
-        if(dataSource.openConnection()){
+        if (dataSource.openConnection()) {
             System.out.println("Results from Artist table");
-            List<Artists> artistsList = dataSource.queryArtist(DataSource.ORDER_BY_DESC);
-            if(artistsList.isEmpty()){
+            List<Artists> artistsList = dataSource.queryArtist(DataSource.ORDER_BY_ASC);
+            if (artistsList.isEmpty()) {
                 System.out.println("No Artists");
                 return;
             }
-            for(Artists artists : artistsList){
+            for (Artists artists : artistsList) {
                 System.out.println(artists.get_id() + "\t" + artists.getName());
             }
 //            System.out.println("Please enter the name of the artist who's albums you are looking for.");
@@ -43,7 +43,10 @@ public class Main {
 //            for(SongArtist songArtist : songArtistList){
 //                System.out.println(songArtist.getTrack() + "\t" + songArtist.getAlbumName()  + "\t" + songArtist.getArtistName());
 //            }
-            dataSource.querySongMetaData();
+
+//            dataSource.querySongMetaData();
+//            dataSource.insertSong("Van Coke Kartel", "Bloed Sweet en Trane", "Moregloed", 10);
+
         }
         dataSource.close();
     }
